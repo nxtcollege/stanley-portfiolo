@@ -13,7 +13,7 @@ const Logo = () => {
 
 const NavItems = () => {
   return (
-    <div className=" flex items-center gap-10 font-semibold">
+    <div className="  items-center gap-10 font-semibold hidden sm:flex">
       {navLinks.map((item, index) => (
         <Link href={`#${item}`} key={index}>
           {item}

@@ -2,24 +2,7 @@ import React from "react";
 import { Container } from "./ui/Container";
 import Image from "next/image";
 import { aboutDownDiv, aboutIcons } from "@/utils/constant";
-
-const AboutHeading = () => {
-  return (
-    <div className=" flex items-center flex-col gap-3 px-24">
-      <p className="text-green-500">ABOUT PT. STANLEY</p>
-      <p className=" text-5xl font-bold text-blue-900">
-        Dedicated to your health and wellness
-      </p>
-      <div className=" px-28">
-        <p className=" text-center">
-          With over 4 year experience in physical medicine, I am commited to
-          providing comprehensive, compassionate, care that address your unique
-          health needs and goals
-        </p>
-      </div>
-    </div>
-  );
-};
+import { Headings } from "./ui/Headings";
 
 const AboutCenterImage = () => {
   return (
@@ -66,7 +49,7 @@ const AboutCenterText = () => {
 
 const AboutCenter = () => {
   return (
-    <div className=" flex gap-10 items-center">
+    <div className=" flex flex-col md:flex-row gap-10 md:items-center">
       <AboutCenterImage />
       <AboutCenterText />
     </div>
@@ -75,7 +58,7 @@ const AboutCenter = () => {
 
 const AboutQualifications = () => {
   return (
-    <div className=" grid grid-cols-4 gap-3 px-12">
+    <div className=" grid grid-cols-2 md:grid-cols-4 gap-3 lg:px-12">
       {aboutIcons.map((item, index) => (
         <div
           className=" bg-white rounded-xl p-6 flex flex-col gap-3"
@@ -85,7 +68,7 @@ const AboutQualifications = () => {
             {<item.icon />}
           </div>
           <p className=" text-blue-900 font-bold text-lg">{item.title}</p>
-          <ul className=" list-disc text-[14px]">
+          <ul className=" list-disc text-[10px] sm:text-[14px]">
             {item.subtitle.map((lists, index) => (
               <li key={index}>{lists}</li>
             ))}
@@ -98,12 +81,12 @@ const AboutQualifications = () => {
 
 const CoreValues = () => {
   return (
-    <div className=" px-12 flex flex-col gap-12">
-      <div className=" flex items-center justify-center flex-col">
+    <div className=" lg:px-12 flex flex-col gap-12">
+      <div className=" flex md:items-center md:justify-center flex-col">
         <p className=" text-3xl text-blue-900 font-bold">My Core Value</p>
         <p>The principle that guide every patients interaction</p>
       </div>
-      <div className=" grid grid-cols-2 gap-4">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 gap-4">
         {aboutDownDiv.map((item, index) => (
           <div
             className=" bg-white rounded-xl p-4 flex flex-col gap-2"
@@ -122,8 +105,14 @@ const About = () => {
   return (
     <div className="w-full h-fit bg-[linear-gradient(to_bottom_right,#DCEFFA_60%,#D2F2E5_100%)]">
       <Container>
-        <div className=" py-24 flex flex-col gap-20">
-          <AboutHeading />
+        <div className=" py-10 md:py-24 flex flex-col gap-20">
+          <Headings
+            intro="ABOUT PT. STANLEY"
+            heading="Dedicated to your health and wellness"
+            subtext="With over 4 year experience in physical medicine, I am commited to
+          providing comprehensive, compassionate, care that address your unique
+          health needs and goals"
+          />
           <AboutCenter />
           <AboutQualifications />
           <CoreValues />
