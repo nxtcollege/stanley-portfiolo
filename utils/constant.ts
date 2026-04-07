@@ -263,3 +263,50 @@ export const contacts: IAboutIcon[] = [
     subtitle: ["Mon-Fri: 8am-5pm", "Sat: 9am-2pm"],
   },
 ];
+
+export const slides = [
+  {
+    imagebg: "/herobg1.jpg",
+    heroimg: "/subhero2.webp",
+    title: "Save a Life Physiotherapy",
+    subtitle:
+      "  We provide expert physiotherapy care focused on restoring movement, reducing pain, and improving your quality of life. Through personalized treatment and support, we help you recover faster and move confidently every day.",
+  },
+  {
+    imagebg: "/herobg2.jpeg",
+    heroimg: "/subhero3.jpg",
+    title: "Your Recovery Starts Here",
+    subtitle:
+      "We deliver dedicated care aimed at restoring function, reducing pain, and improving your overall well-being. Through personalized therapy and expert guidance, we support your journey to full recovery and lasting strength.",
+  },
+  {
+    imagebg: "/hero3.jpg",
+    heroimg: "/subhero1.png",
+    title: "Relieve Pain. Restore Life",
+    subtitle:
+      "We provide targeted care to reduce pain, restore movement, and improve your quality of life. With personalized therapy and consistent support, we help you recover faster and return to your daily routine.",
+  },
+];
+
+export const companyAbout = [
+  {
+    heading: "Expert Care for Your Recovery and Well-Being",
+    text: "At Save a Life Physiotherapy, we are committed to helping individuals recover from injuries, reduce pain, and restore movement through expert, personalized care. Our approach focuses on improving your quality of life by addressing the root cause of your condition, not just the symptoms.",
+    image: "/abimage1.avif",
+  },
+  {
+    heading: "Modern Techniques. Tailored for You.",
+    text: "We combine modern physiotherapy techniques with a patient-centered approach, ensuring that every treatment plan is tailored to your unique needs and recovery goals. Whether you are dealing with a recent injury or a long-term condition, we are here to support your journey to better health.",
+    image: "/abimage2.jpg",
+  },
+  {
+    heading: "Specialized Care, Trusted Professionals",
+    text: "Our team of licensed and experienced physiotherapists specializes in a wide range of rehabilitation services, including musculoskeletal, neurological, and sports injury recovery. We are dedicated to providing safe, effective, and compassionate care at every stage of your treatment.",
+    image: "/abimage3.png",
+  },
+  {
+    heading: "Your Recovery Is Our Priority",
+    text: "At Save a Life Physiotherapy, your recovery is our priority. We work closely with you to help you regain strength, restore mobility, and return to your daily activities with confidence.",
+    image: "/abimage4.jpg",
+  },
+];

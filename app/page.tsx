@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AboutCompany from "@/components/AboutCompany";
 import Booking from "@/components/Booking";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -8,9 +9,10 @@ const page = () => {
   return (
     <React.Fragment>
       <Hero />
-      <About />
+      <AboutCompany />
       <Services />
       <Booking />
+      <About />
     </React.Fragment>
   );
 };

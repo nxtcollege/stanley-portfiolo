@@ -107,9 +107,9 @@ const About = () => {
       <Container>
         <div className=" py-10 md:py-24 flex flex-col gap-20">
           <Headings
-            intro="ABOUT PT. STANLEY"
+            intro="Founder and Team lead"
             heading="Dedicated to your health and wellness"
-            subtext="With over 4 year experience in physical medicine, I am commited to
+            subtext="With over many years experience in physical medicine, I am commited to
           providing comprehensive, compassionate, care that address your unique
           health needs and goals"
           />

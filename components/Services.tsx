@@ -62,7 +62,7 @@ const ListOfServces = () => {
 
 const Services = () => {
   return (
-    <div className=" bg-white">
+    <div id="service" className=" bg-white">
       <Container>
         <div className=" py-10 md:py-24 flex flex-col gap-10 md:gap-20">
           <Headings

@@ -24,7 +24,9 @@ import { Textarea } from "./ui/textarea";
 const AppointmentType = () => {
   return (
     <div className=" flex-1">
-      <p>Appointment type</p>
+      <p className=" max-sm:text-[14px] ">
+        Appointment type <span className="text-red-500">*</span>
+      </p>
       <Select>
         <SelectTrigger className=" w-full">
           <SelectValue placeholder="Theme" />
@@ -45,7 +47,10 @@ export function AppointmentDate() {
   const [date, setDate] = React.useState<Date>();
   return (
     <Field className="mx-auto  flex-1 -space-y-2">
-      <FieldLabel htmlFor="date-picker-simple">Date</FieldLabel>
+      <FieldLabel className=" max-sm:text-[14px]" htmlFor="date-picker-simple">
+        Date
+        <span className="text-red-500">*</span>
+      </FieldLabel>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -71,8 +76,11 @@ export function AppointmentDate() {
 
 const CommonInput: React.FC<{ title: string }> = ({ title }) => {
   return (
-    <div className=" flex flex-col gap-1">
-      <p>{title}</p>
+    <div className=" flex flex-col sm:gap-1">
+      <p className=" max-sm:text-[14px]">
+        {title}
+        <span className=" text-red-500">*</span>
+      </p>
       <Input placeholder={`${title}`} />
     </div>
   );
@@ -85,7 +93,7 @@ const BookForm = () => {
         <p className=" text-blue-900 text-xl font-bold">Request Appointment</p>
         <div className=" flex flex-col gap-2">
           <CommonInput title="Name" />
-          <div className=" flex item-center gap-2">
+          <div className=" flex flex-col sm:flex-row item-center gap-2">
             <div className=" flex-1">
               <CommonInput title="Email" />
             </div>
@@ -93,13 +101,13 @@ const BookForm = () => {
               <CommonInput title="Phone" />
             </div>
           </div>
-          <div className=" flex items-center gap-2">
+          <div className=" flex flex-col sm:flex-row sm:items-center gap-2">
             <AppointmentType />
             <AppointmentDate />
           </div>
           <div className=" flex flex-col gap-1">
-            <p>Additional information</p>
-            <Textarea placeholder="More information" className=" h-[150px]" />
+            <p className=" max-sm:text-[14px]">Additional information</p>
+            <Textarea placeholder="More information" className=" h-37.5" />
           </div>
           <Button className=" bg-blue-900 py-6 cursor-pointer hover:bg-blue-800">
             Book Appointment
@@ -167,7 +175,10 @@ const BookingDown = () => {
 
 const Booking = () => {
   return (
-    <div className="bg-linear-to-br from-[#DCEFFA] via-[#E8F6F2] to-[#D2F2E5]">
+    <div
+      id="contact"
+      className="bg-linear-to-br from-[#DCEFFA] via-[#E8F6F2] to-[#D2F2E5]"
+    >
       <Container>
         <div className=" py-24 flex flex-col gap-10">
           <Headings
