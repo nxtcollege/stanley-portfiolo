@@ -28,19 +28,33 @@ const AboutCenterText = () => {
       </p>
       <div className=" flex flex-col gap-3">
         <p>
-          Physiotherapy focuses on restoring movement, reducing pain, and
-          improving overall physical function through personalized care tailored
-          to each individual’s lifestyle, needs, and recovery goals.
+          Stanley Idoko is a qualified licensed physiotherapist with over 5
+          years working experience in his field.
         </p>
         <p>
-          With experience in injury recovery, rehabilitation, and pain
-          management, treatments combine hands-on techniques and guided
-          exercises to support safe, effective, and lasting recovery.
+          An Alumni of prestigious University of Nigeria, who has a range of
+          clinical and admistrative work associations.
         </p>
         <p>
-          The aim is to empower patients with strength, knowledge, and
-          confidence to prevent future injuries, stay active, and maintain a
-          healthy, independent, and pain-free lifestyle.
+          He started his Career in Port Harcourt, Nigeria where he was a team
+          player in Soft touch Physiotherapy and Wellness Center,and also did
+          volunteering services for different NGOs in UPTH.
+        </p>
+        <p>
+          He relocated to Lagos,and was a part-time locum Staff for Wellpath
+          Physiotherapy and Rehabilitation clinic, Amazing Physiotherapy,and
+          Primrose Specialist hospital.
+        </p>
+        <p>
+          He currently works in Physiotherapy department, National orthopedic
+          hospital Igbobi, Lagos. With a lot of testimonials and wide stream
+          patient database, he always advocates for optimal patient recovery,
+          functional independence and holistic being.
+        </p>
+        <p>
+          Driven by the growing need for Physiotherapy for productivity, he is
+          geared to bringing expert Physiotherapy and care to your
+          doorsteps(home, hospital, workplace etc).
         </p>
       </div>
     </div>
