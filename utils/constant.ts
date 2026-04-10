@@ -20,6 +20,9 @@ import { IoCallOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
+import { SlSocialInstagram } from "react-icons/sl";
+import { FaXTwitter } from "react-icons/fa6";
+import { RiFacebookBoxLine } from "react-icons/ri";
 
 export const navLinks: string[] = [
   "About",
@@ -308,5 +311,29 @@ export const companyAbout = [
     heading: "Your Recovery Is Our Priority",
     text: "At Save a Life Physiotherapy, your recovery is our priority. We work closely with you to help you regain strength, restore mobility, and return to your daily activities with confidence.",
     image: "/abimage4.jpg",
+  },
+];
+
+interface ISocials {
+  link: string;
+  icon: IconType;
+  color: string;
+}
+
+export const socialFooter: ISocials[] = [
+  {
+    link: "https://www.instagram.com/sal_physiotherapy_clinic/profilecard/?igsh=MWt3azFxc2o2MWExMQ==",
+    icon: SlSocialInstagram,
+    color: "red-500",
+  },
+  {
+    link: "https://x.com/SaveALifePhysio?t=waR2kms5NXmyOzia0nW-zQ&s=09",
+    icon: FaXTwitter,
+    color: "black",
+  },
+  {
+    link: "https://www.facebook.com/share/1AzgHndvsr/",
+    icon: RiFacebookBoxLine,
+    color: "blue-500",
   },
 ];
