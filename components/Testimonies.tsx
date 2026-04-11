@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { Container } from "./ui/Container";
-import { FaGithub } from "react-icons/fa";
 
 export const Testimonies = [
   {
@@ -69,14 +68,14 @@ export default () => {
     <div id="testimonies" className="w-full bg-main-bg pt-20 pb-10">
       <Container className="flex flex-col overflow-hidden relative gap-10">
         <div className="flex items-center flex-col justify-cente">
-          <p className=" text-4xl md:text-5xl font-bold text-blue-900">
+          <p className=" text-4xl md:text-5xl text-center font-bold text-blue-900">
             Patients Testimonies
           </p>
           <p>Why we love save a life physiotherapy</p>
         </div>
 
         {/* Stable container */}
-        <div className="w-full max-w-screen-xl mx-auto overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto overflow-hidden">
           <Swiper
             modules={[Autoplay]}
             slidesPerView={3}
@@ -102,7 +101,7 @@ export default () => {
                 {/* Testimony content */}
                 <div className="flex flex-col gap-10">
                   <div>
-                    <div className="w-[70px] mb-2">
+                    <div className="w-17.5 mb-2">
                       <Image
                         src={item.pix}
                         alt={item.name}

@@ -7,7 +7,7 @@ const LeftSide = () => {
   return (
     <div className=" flex-1 flex flex-col gap-4">
       <Image
-        className=" rounded-2xl opacity-65 w-[100px]"
+        className=" rounded-2xl opacity-65 w-[70px] sm:w-[100px]"
         src={"/logo-main.jpeg"}
         alt=""
         width={100}
@@ -41,10 +41,10 @@ const Footer = () => {
   return (
     <div className=" bg-gray-50">
       <Container>
-        <div className=" py-10">
+        <div className=" py-10 flex flex-col gap-4">
           <Top />
-          <div className=" flex items-center justify-center gap-1">
-            <small>
+          <div className=" flex flex-col sm:flex-row items-center justify-center gap-1">
+            <small className="text-[8px]">
               Copyright © 2026 save a life physiotherapy & Wellness Ltd. All
               rights reserved.
             </small>

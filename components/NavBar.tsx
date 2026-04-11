@@ -53,7 +53,7 @@ const MobileHanberger: React.FC<{
   showSheet: boolean;
 }> = ({ showSheet, setShowSheet }) => {
   return (
-    <div className=" lg:hidden ">
+    <div className=" sm:hidden ">
       <Sheet open={showSheet} onOpenChange={setShowSheet}>
         <SheetContent
           side="top"
