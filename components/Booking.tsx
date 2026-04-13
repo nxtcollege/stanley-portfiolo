@@ -20,16 +20,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "./ui/textarea";
+import { toast } from "sonner";
 
 const AppointmentType: React.FC<{
-  setValue: React.Dispatch<React.SetStateAction<string | undefined>>;
-}> = ({ setValue }) => {
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ setValue, value }) => {
   return (
     <div className=" flex-1">
       <p className=" max-sm:text-[14px] ">
         Appointment type <span className="text-red-500">*</span>
       </p>
-      <Select onValueChange={(value) => setValue(value)}>
+      <Select value={value} onValueChange={(value) => setValue(value)}>
         <SelectTrigger className=" w-full">
           <SelectValue placeholder="Theme" />
         </SelectTrigger>
@@ -82,9 +84,10 @@ export function AppointmentDate({
 }
 
 const CommonInput: React.FC<{
+  value: string;
   title: string;
-  setValue: React.Dispatch<React.SetStateAction<string | undefined>>;
-}> = ({ title, setValue }) => {
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ title, setValue, value }) => {
   return (
     <div className=" flex flex-col sm:gap-1">
       <p className=" max-sm:text-[14px]">
@@ -92,6 +95,7 @@ const CommonInput: React.FC<{
         <span className=" text-red-500">*</span>
       </p>
       <Input
+        value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={`${title}`}
       />
@@ -100,12 +104,13 @@ const CommonInput: React.FC<{
 };
 
 const BookForm = () => {
-  const [name, setName] = useState<string>();
-  const [email, setEmail] = useState<string>();
-  const [phoneNo, setPhoneNo] = useState<string>();
-  const [appointmentType, setAppointmentType] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phoneNo, setPhoneNo] = useState<string>("");
+  const [appointmentType, setAppointmentType] = useState<string>("");
   const [date, setDate] = useState<Date>();
   const [moreInfo, setMoreInfo] = useState<string>();
+  const [booking, setBooking] = useState<boolean>(false);
 
   const handleFormSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -113,6 +118,7 @@ const BookForm = () => {
       return alert(
         "Please we need all the information in the appointment fields",
       );
+    setBooking(true);
     //  submit to the backend
     try {
       const response = await fetch("/api/appointment", {
@@ -127,12 +133,20 @@ const BookForm = () => {
         }),
       });
       if (response.ok) {
-        alert("appointment submitted successfully");
+        setEmail("");
+        setName("");
+        setPhoneNo("");
+        setAppointmentType("");
+        setDate(undefined);
+        setMoreInfo("");
+        toast.success("appointment scheduled successfully!!");
       } else {
-        alert("somthing went wrong");
+        toast.error("something went wrong!!");
       }
     } catch (error) {
-      alert("something went wrong");
+      toast.error("something went wrong!!");
+    } finally {
+      setBooking(false);
     }
   };
 
@@ -144,17 +158,24 @@ const BookForm = () => {
       >
         <p className=" text-blue-900 text-xl font-bold">Request Appointment</p>
         <div className=" flex flex-col gap-2">
-          <CommonInput setValue={setName} title="Name" />
+          <CommonInput value={name} setValue={setName} title="Name" />
           <div className=" flex flex-col sm:flex-row item-center gap-2">
             <div className=" flex-1">
-              <CommonInput setValue={setEmail} title="Email" />
+              <CommonInput value={email} setValue={setEmail} title="Email" />
             </div>
             <div className=" flex-1">
-              <CommonInput setValue={setPhoneNo} title="Phone" />
+              <CommonInput
+                value={phoneNo}
+                setValue={setPhoneNo}
+                title="Phone"
+              />
             </div>
           </div>
           <div className=" flex flex-col sm:flex-row sm:items-center gap-2">
-            <AppointmentType setValue={setAppointmentType} />
+            <AppointmentType
+              value={appointmentType}
+              setValue={setAppointmentType}
+            />
             <AppointmentDate date={date} setDate={setDate} />
           </div>
           <div className=" flex flex-col gap-1">
@@ -165,8 +186,11 @@ const BookForm = () => {
               className=" h-37.5"
             />
           </div>
-          <Button className=" bg-blue-900 py-6 cursor-pointer hover:bg-blue-800">
-            Book Appointment
+          <Button
+            disabled={booking}
+            className=" bg-blue-900 py-6 cursor-pointer hover:bg-blue-800"
+          >
+            {booking ? "Booking Appointment..." : "Book Appointment"}
           </Button>
           <small className=" text-center">
             By submitting this form, you agree to our privacy policy and consent

@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   weight: "300",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-poppins">
         <NavBar />
         <main>{children}</main>
+        <Toaster />
         <Footer />
       </body>
     </html>
