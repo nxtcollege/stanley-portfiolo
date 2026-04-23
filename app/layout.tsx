@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-poppins">
         <NavBar />
         <main>{children}</main>
-        <Toaster />
+        <Toaster position="top-right" />
         <Footer />
       </body>
     </html>

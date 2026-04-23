@@ -48,45 +48,6 @@ export const heroIcons: IHeroIcon[] = [
   { icon: LuClock3, title: "24/7", subtitle: "emergency care" },
 ];
 
-export const aboutIcons: IAboutIcon[] = [
-  {
-    icon: SlGraduation,
-    title: "Education",
-    subtitle: [
-      "University of Nigeria",
-      "Intern at Igbobi",
-      "Unth clinical learning",
-    ],
-  },
-  {
-    icon: BsBagCheck,
-    title: "Experience",
-    subtitle: [
-      "3 years in stroke management",
-      "advanced in orthopedic",
-      "post surgery physiotherapy",
-    ],
-  },
-  {
-    icon: PiCertificateLight,
-    title: "Certification",
-    subtitle: [
-      "Nigeria certified physiotherapist",
-      "Certified orthopedic physiotherapist",
-      "In patients specialist",
-    ],
-  },
-  {
-    icon: IoBookOutline,
-    title: "Publications",
-    subtitle: [
-      "10+ peer-reviewed articles",
-      "10+ peer-reviewed articles",
-      "10+ peer-reviewed articles",
-    ],
-  },
-];
-
 export const aboutDownDiv: { title: string; subtitle: string }[] = [
   {
     title: "Compassionate care",
@@ -117,6 +78,18 @@ interface IPhysioServices {
   items: Array<string>;
 }
 export const physiotherapyServices: IPhysioServices[] = [
+  {
+    title: "Home & Tele-Rehabilitation",
+    description:
+      "Convenient physiotherapy sessions delivered at home or remotely.",
+    icon: LuMonitor,
+    items: [
+      "Virtual Consultations",
+      "Home Visits",
+      "Exercise Programs",
+      "Progress Monitoring",
+    ],
+  },
   {
     title: "Injury Rehabilitation",
     description:
@@ -201,18 +174,6 @@ export const physiotherapyServices: IPhysioServices[] = [
       "Movement Therapy",
     ],
   },
-  {
-    title: "Home & Tele-Rehabilitation",
-    description:
-      "Convenient physiotherapy sessions delivered at home or remotely.",
-    icon: LuMonitor,
-    items: [
-      "Virtual Consultations",
-      "Home Visits",
-      "Exercise Programs",
-      "Progress Monitoring",
-    ],
-  },
 ];
 
 interface ISteps {
@@ -248,17 +209,17 @@ export const contacts: IAboutIcon[] = [
   {
     icon: IoCallOutline,
     title: "Phone",
-    subtitle: ["main:+2349076512", "emergency:+23490237834"],
+    subtitle: ["Line1: 08107005473", "Line2: 09019460491"],
   },
   {
     icon: TfiEmail,
     title: "Email",
-    subtitle: ["stanleyphysio@gmail.com", "bestphysio@gmail.com"],
+    subtitle: ["Savealife.physiotherapyclinic@gmail.com"],
   },
   {
     icon: CiLocationOn,
     title: "Location",
-    subtitle: ["No 23 manchester city lagos Nigeria"],
+    subtitle: ["Lagos State, Nigeria", "Ogun State, Nigeria "],
   },
   {
     icon: CiClock2,
@@ -336,4 +297,17 @@ export const socialFooter: ISocials[] = [
     icon: RiFacebookBoxLine,
     color: "blue-500",
   },
+];
+
+export const appointmentLists: string[] = [
+  "Low back pain",
+  "Stroke",
+  "Parkinsons disease",
+  "Bell's palsy",
+  "Neck pain",
+  "Online consultation",
+  "Post-Op Rehabilitation ",
+  "Pre-Op Rehabilitation",
+  "Joint pain",
+  "Others",
 ];

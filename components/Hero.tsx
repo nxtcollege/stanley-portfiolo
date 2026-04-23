@@ -12,7 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-const LeftHeroIcons = () => {
+export const LeftHeroIcons: React.FC<{ isHero: boolean }> = ({ isHero }) => {
   return (
     <div className=" grid grid-cols-2 sm:grid-cols-4 gap-2">
       {heroIcons.map((item, index) => (
@@ -21,7 +21,11 @@ const LeftHeroIcons = () => {
             {<item.icon />}
           </div>
           <p className=" text-blue-500 font-semibold">{item.title}</p>
-          <p className=" max-lg:text-[14px] text-gray-200">{item.subtitle}</p>
+          <p
+            className={`max-lg:text-[14px] ${isHero ? "text-gray-200" : "text-black"}`}
+          >
+            {item.subtitle}
+          </p>
         </div>
       ))}
     </div>
@@ -33,12 +37,14 @@ const NameIntro: React.FC<{ title: string; subtitle: string }> = ({
   subtitle,
 }) => {
   return (
-    <div className=" flex flex-col gap-6">
+    <div className=" md:flex flex-col gap-6">
       <p className=" text-white text-4xl md:text-5xl lg:text-7xl font-bold ">
         {title}
       </p>
-      <p className=" text-lg lg:text-xl text-gray-200">{subtitle}</p>
-      <div className=" flex items-center gap-4">
+      <p className=" max-md:hidden text-lg lg:text-xl text-gray-200">
+        {subtitle}
+      </p>
+      <div className=" max-md:hidden flex items-center gap-4">
         <div className=" max-sm:flex-1 max-sm:flex items-center justify-center py-3 sm:px-6 max-md:text-[10px] sm:py-3 bg-blue-500 text-white rounded-3xl">
           <p>Book appointment</p>
         </div>
@@ -46,6 +52,23 @@ const NameIntro: React.FC<{ title: string; subtitle: string }> = ({
           <p>Learn more</p>
         </div>
       </div>
+    </div>
+  );
+};
+
+const IntroForMobile = () => {
+  const heroSubtext = [
+    "For home therapy",
+    "For your workplace",
+    "For your work place",
+    "For yourself ",
+  ];
+  return (
+    <div className=" text-white md:hidden">
+      <p className=" text-xl">Need a Physiotherapist?</p>
+      {heroSubtext.map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
     </div>
   );
 };
@@ -61,7 +84,10 @@ const LeftHero: React.FC<{ title: string; subtitle: string }> = ({
       </div>
       <div className=" mt-3 flex flex-col gap-4 lg:gap-12">
         <NameIntro title={title} subtitle={subtitle} />
-        <LeftHeroIcons />
+        <IntroForMobile />
+        <div className="max-md:hidden">
+          <LeftHeroIcons isHero={true} />
+        </div>
       </div>
     </div>
   );

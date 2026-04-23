@@ -9,37 +9,43 @@ import { Container } from "./ui/Container";
 
 export const Testimonies = [
   {
-    name: "Maxwell Etinosa",
-    pix: "/testi.webp",
+    name: "ude Somto Ugwu",
+    position: "CEO and Co-Founder Digitpay",
+    pix: "/somto.png",
     testimony:
       "Save a Life Physiotherapy helped reduce my pain significantly and improved my overall mobility. I can now move freely, carry out my daily activities with ease, and feel much better than before.",
   },
   {
-    name: "Emmanuel Akanmu",
-    pix: "/testi.webp",
+    name: "Blessing Olarewaju",
+    position: "Director Arraya Studios",
+    pix: "/araya.png",
     testimony:
       "My recovery journey with Save a Life Physiotherapy was smooth, well-guided, and very effective from start to finish. The team was supportive, patient, and always ensured I was comfortable every step of the way.",
   },
   {
     name: "Daniel Igwe",
+    position: "",
     pix: "/testi.webp",
     testimony:
       "I saw real and noticeable improvement after my sessions at Save a Life Physiotherapy, even within a short time. I feel stronger, more flexible, and much more confident in my movements now.",
   },
   {
     name: "Daniel Igwe",
+    position: "",
     pix: "/testi.webp",
     testimony:
       "The team at Save a Life Physiotherapy made my recovery experience stress-free and encouraging. I’m truly grateful for their dedication, professionalism, and the consistent support they gave me.",
   },
   {
     name: "Daniel Igwe",
+    position: "",
     pix: "/testi.webp",
     testimony:
       "Save a Life Physiotherapy provided excellent care and attention throughout my treatment process. I’m now able to return to my daily activities without discomfort and with renewed confidence.",
   },
   {
     name: "Daniel Igwe",
+    position: "",
     pix: "/testi.webp",
     testimony:
       "Choosing Save a Life Physiotherapy was the right decision for my recovery and overall well-being. My mobility has improved greatly, and I now feel healthier and more active than before.",
@@ -99,7 +105,7 @@ export default () => {
                 {/* Background glow */}
 
                 {/* Testimony content */}
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-5">
                   <div>
                     <div className="w-17.5 mb-2">
                       <Image
@@ -114,8 +120,9 @@ export default () => {
                       {item.testimony}
                     </p>
                   </div>
-                  <div className="flex gap-2 items-center justify-between">
+                  <div className="flex flex-col ">
                     <p className="text-slate-900">{item.name}</p>
+                    <p className=" text-slate-900">{item.position}</p>
                   </div>
                 </div>
               </SwiperSlide>

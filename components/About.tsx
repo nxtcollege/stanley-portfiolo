@@ -1,8 +1,9 @@
 import React from "react";
 import { Container } from "./ui/Container";
 import Image from "next/image";
-import { aboutDownDiv, aboutIcons } from "@/utils/constant";
+import { aboutDownDiv } from "@/utils/constant";
 import { Headings } from "./ui/Headings";
+import { LeftHeroIcons } from "./Hero";
 
 const AboutCenterImage = () => {
   return (
@@ -70,29 +71,6 @@ const AboutCenter = () => {
   );
 };
 
-const AboutQualifications = () => {
-  return (
-    <div className=" grid grid-cols-2 md:grid-cols-4 gap-3 lg:px-12">
-      {aboutIcons.map((item, index) => (
-        <div
-          className=" bg-white rounded-xl p-6 flex flex-col gap-3"
-          key={index}
-        >
-          <div className=" w-12 aspect-square bg-[#DCEFFA] flex items-center justify-center text-green-700 rounded-xl">
-            {<item.icon />}
-          </div>
-          <p className=" text-blue-900 font-bold text-lg">{item.title}</p>
-          <ul className=" list-disc text-[10px] sm:text-[14px]">
-            {item.subtitle.map((lists, index) => (
-              <li key={index}>{lists}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const CoreValues = () => {
   return (
     <div className=" lg:px-12 flex flex-col gap-12">
@@ -128,8 +106,10 @@ const About = () => {
           health needs and goals"
           />
           <AboutCenter />
-          <AboutQualifications />
           <CoreValues />
+          <div className=" md:hidden bg-white py-4 rounded-2xl">
+            <LeftHeroIcons isHero={false} />
+          </div>
         </div>
       </Container>
     </div>

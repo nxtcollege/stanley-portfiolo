@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Container } from "./ui/Container";
 import { Headings } from "./ui/Headings";
-import { contacts } from "@/utils/constant";
+import { appointmentLists, contacts } from "@/utils/constant";
 import Image from "next/image";
 import { Input } from "./ui/input";
 import { format } from "date-fns";
@@ -33,13 +33,15 @@ const AppointmentType: React.FC<{
       </p>
       <Select value={value} onValueChange={(value) => setValue(value)}>
         <SelectTrigger className=" w-full">
-          <SelectValue placeholder="Theme" />
+          <SelectValue placeholder="appointment type" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="sports injurty">Sports</SelectItem>
-            <SelectItem value="stroke">Stroke</SelectItem>
-            <SelectItem value="Back pain">Back pains</SelectItem>
+            {appointmentLists.map((item, index) => (
+              <SelectItem key={index} value={item}>
+                {item}
+              </SelectItem>
+            ))}
           </SelectGroup>
         </SelectContent>
       </Select>
@@ -181,6 +183,7 @@ const BookForm = () => {
           <div className=" flex flex-col gap-1">
             <p className=" max-sm:text-[14px]">Additional information</p>
             <Textarea
+              value={moreInfo}
               onChange={(e) => setMoreInfo(e.target.value)}
               placeholder="More information"
               className=" h-37.5"
@@ -215,9 +218,9 @@ const OtherDetails = () => {
               {<item.icon />}
             </div>
             <p className=" text-blue-900 font-semibold">{item.title}</p>
-            <div className=" text-[14px]">
+            <div className=" text-[14px] wrap-break-word">
               {item.subtitle.map((sub, i) => (
-                <p className=" max-sm:text-[10px]" key={i}>
+                <p className={` text-[10px]  md:text-[12px]`} key={i}>
                   {sub}
                 </p>
               ))}
