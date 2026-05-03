@@ -23,9 +23,9 @@ export const Testimonies = [
       "My recovery journey with Save a Life Physiotherapy was smooth, well-guided, and very effective from start to finish. The team was supportive, patient, and always ensured I was comfortable every step of the way.",
   },
   {
-    name: "Daniel Igwe",
+    name: "Adadiche Udeh",
     position: "",
-    pix: "/testi.webp",
+    pix: "/udeh.png",
     testimony:
       "I saw real and noticeable improvement after my sessions at Save a Life Physiotherapy, even within a short time. I feel stronger, more flexible, and much more confident in my movements now.",
   },

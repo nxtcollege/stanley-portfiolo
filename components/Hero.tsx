@@ -60,7 +60,6 @@ const IntroForMobile = () => {
   const heroSubtext = [
     "For home therapy",
     "For your workplace",
-    "For your work place",
     "For yourself ",
   ];
   return (
